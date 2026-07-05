@@ -981,7 +981,7 @@ git commit -m "feat: add moving average and RSI technical indicators"
 - Create: `src/finstock/analysis/screener.py`
 - Test: `tests/analysis/test_screener.py`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```python
 # tests/analysis/test_screener.py
@@ -1026,12 +1026,12 @@ def test_missing_metrics_do_not_crash_scoring():
     assert 0.0 <= results[0].composite_score <= 1.0
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [x] **Step 2: Run test to verify it fails**
 
 Run: `uv run pytest tests/analysis/test_screener.py -v`
 Expected: FAIL with `ModuleNotFoundError: No module named 'finstock.analysis.screener'`
 
-- [ ] **Step 3: Write `src/finstock/analysis/screener.py`**
+- [x] **Step 3: Write `src/finstock/analysis/screener.py`**
 
 ```python
 from __future__ import annotations
@@ -1133,12 +1133,12 @@ def score_universe(inputs: list[ScreenerInput], weights: dict[str, float]) -> li
     return results
 ```
 
-- [ ] **Step 4: Run test to verify it passes**
+- [x] **Step 4: Run test to verify it passes**
 
 Run: `uv run pytest tests/analysis/test_screener.py -v`
 Expected: PASS
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/finstock/analysis/screener.py tests/analysis/test_screener.py
@@ -1153,7 +1153,7 @@ git commit -m "feat: add value/quality/momentum screener scoring"
 - Create: `src/finstock/analysis/holdings.py`
 - Test: `tests/analysis/test_holdings.py`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```python
 # tests/analysis/test_holdings.py
@@ -1231,12 +1231,12 @@ def test_analyze_holding_cites_3m_and_6m_returns_when_provided():
     assert any("6-month" in p and "-2.0%" in p for p in analysis.bear_points)
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [x] **Step 2: Run test to verify it fails**
 
 Run: `uv run pytest tests/analysis/test_holdings.py -v`
 Expected: FAIL with `ModuleNotFoundError: No module named 'finstock.analysis.holdings'`
 
-- [ ] **Step 3: Write `src/finstock/analysis/holdings.py`**
+- [x] **Step 3: Write `src/finstock/analysis/holdings.py`**
 
 ```python
 from __future__ import annotations
@@ -1342,12 +1342,12 @@ def analyze_holding(
     return HoldingAnalysis(symbol=symbol, bull_points=bull, bear_points=bear, uncertainty_notes=uncertainty)
 ```
 
-- [ ] **Step 4: Run test to verify it passes**
+- [x] **Step 4: Run test to verify it passes**
 
 Run: `uv run pytest tests/analysis/test_holdings.py -v`
 Expected: PASS
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/finstock/analysis/holdings.py tests/analysis/test_holdings.py
@@ -1362,7 +1362,7 @@ git commit -m "feat: add rule-based bull/bear holding analysis"
 - Create: `src/finstock/state.py`
 - Test: `tests/test_state.py`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```python
 # tests/test_state.py
@@ -1421,12 +1421,12 @@ def test_diff_flags_position_size_change():
     assert any("15" in note and "10" in note for note in changes["AAPL"])
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [x] **Step 2: Run test to verify it fails**
 
 Run: `uv run pytest tests/test_state.py -v`
 Expected: FAIL with `ModuleNotFoundError: No module named 'finstock.state'`
 
-- [ ] **Step 3: Write `src/finstock/state.py`**
+- [x] **Step 3: Write `src/finstock/state.py`**
 
 ```python
 from __future__ import annotations
@@ -1504,12 +1504,12 @@ def diff_snapshots(
     return changes
 ```
 
-- [ ] **Step 4: Run test to verify it passes**
+- [x] **Step 4: Run test to verify it passes**
 
 Run: `uv run pytest tests/test_state.py -v`
 Expected: PASS
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/finstock/state.py tests/test_state.py
