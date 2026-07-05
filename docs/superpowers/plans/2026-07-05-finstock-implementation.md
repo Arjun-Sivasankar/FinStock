@@ -1524,7 +1524,7 @@ git commit -m "feat: add JSON snapshot state and change detection"
 - Create: `src/finstock/report.py`
 - Test: `tests/test_report.py`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```python
 # tests/test_report.py
@@ -1605,12 +1605,12 @@ def test_save_report_writes_dated_file(tmp_path):
     assert path.name == "2026-07-05_0800.md"
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [x] **Step 2: Run test to verify it fails**
 
 Run: `uv run pytest tests/test_report.py -v`
 Expected: FAIL with `ModuleNotFoundError: No module named 'finstock.report'`
 
-- [ ] **Step 3: Write `src/finstock/report.py`**
+- [x] **Step 3: Write `src/finstock/report.py`**
 
 ```python
 from __future__ import annotations
@@ -1722,12 +1722,12 @@ def save_report(reports_dir: Path, timestamp: datetime, content: str) -> Path:
     return path
 ```
 
-- [ ] **Step 4: Run test to verify it passes**
+- [x] **Step 4: Run test to verify it passes**
 
 Run: `uv run pytest tests/test_report.py -v`
 Expected: PASS
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/finstock/report.py tests/test_report.py
@@ -1742,7 +1742,7 @@ git commit -m "feat: add markdown report renderer"
 - Create: `src/finstock/notify.py`
 - Test: `tests/test_notify.py`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```python
 # tests/test_notify.py
@@ -1770,12 +1770,12 @@ def test_send_notification_returns_false_on_failure():
     assert result is False
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [x] **Step 2: Run test to verify it fails**
 
 Run: `uv run pytest tests/test_notify.py -v`
 Expected: FAIL with `ModuleNotFoundError: No module named 'finstock.notify'`
 
-- [ ] **Step 3: Write `src/finstock/notify.py`**
+- [x] **Step 3: Write `src/finstock/notify.py`**
 
 ```python
 from __future__ import annotations
@@ -1797,17 +1797,17 @@ def send_notification(ntfy_topic: str, title: str, message: str) -> bool:
         return False
 ```
 
-- [ ] **Step 4: Run test to verify it passes**
+- [x] **Step 4: Run test to verify it passes**
 
 Run: `uv run pytest tests/test_notify.py -v`
 Expected: PASS
 
-- [ ] **Step 5: Run the guardrail suite once more**
+- [x] **Step 5: Run the guardrail suite once more**
 
 Run: `uv run pytest tests/test_no_trading.py -v`
 Expected: PASS — `notify.py` is the one file allowed to call `requests.post`.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add src/finstock/notify.py tests/test_notify.py
