@@ -398,7 +398,7 @@ git commit -m "feat: add data models and T212 ticker mapping"
 - Create: `src/finstock/clients/trading212.py`
 - Test: `tests/clients/test_trading212.py`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```python
 # tests/clients/test_trading212.py
@@ -458,12 +458,12 @@ def test_get_cash_raises_after_exhausting_retries():
         pass
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [x] **Step 2: Run test to verify it fails**
 
 Run: `uv run pytest tests/clients/test_trading212.py -v`
 Expected: FAIL with `ModuleNotFoundError: No module named 'finstock.clients.trading212'`
 
-- [ ] **Step 3: Write `src/finstock/clients/trading212.py`**
+- [x] **Step 3: Write `src/finstock/clients/trading212.py`**
 
 ```python
 from __future__ import annotations
@@ -522,12 +522,12 @@ class Trading212Client:
         return self._get("/equity/history/dividends", params=params)
 ```
 
-- [ ] **Step 4: Run test to verify it passes**
+- [x] **Step 4: Run test to verify it passes**
 
 Run: `uv run pytest tests/clients/test_trading212.py -v`
 Expected: PASS (3 passed)
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/finstock/clients/trading212.py tests/clients/test_trading212.py
