@@ -301,7 +301,7 @@ git commit -m "feat: add config loader for .env + config.yaml"
 - Create: `src/finstock/models.py`
 - Test: `tests/test_models.py`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```python
 # tests/test_models.py
@@ -317,12 +317,12 @@ def test_derive_symbol_uses_override_when_present():
     assert derive_symbol("VOD_LON_EQ", overrides) == "VOD.L"
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [x] **Step 2: Run test to verify it fails**
 
 Run: `uv run pytest tests/test_models.py -v`
 Expected: FAIL with `ModuleNotFoundError: No module named 'finstock.models'`
 
-- [ ] **Step 3: Write `src/finstock/models.py`**
+- [x] **Step 3: Write `src/finstock/models.py`**
 
 ```python
 from __future__ import annotations
@@ -378,12 +378,12 @@ class ScreenerResult:
     reasoning: list[str]
 ```
 
-- [ ] **Step 4: Run test to verify it passes**
+- [x] **Step 4: Run test to verify it passes**
 
 Run: `uv run pytest tests/test_models.py -v`
 Expected: PASS
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/finstock/models.py tests/test_models.py
