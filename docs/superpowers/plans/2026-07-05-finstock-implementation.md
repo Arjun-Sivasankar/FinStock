@@ -541,7 +541,7 @@ git commit -m "feat: add read-only Trading 212 client with retry/backoff"
 **Files:**
 - Create: `tests/test_no_trading.py`
 
-- [ ] **Step 1: Write `tests/test_no_trading.py`**
+- [x] **Step 1: Write `tests/test_no_trading.py`**
 
 This test has no "make it pass" cycle in the usual TDD sense — it validates
 existing code from Task 4 onward and must stay green for the life of the
@@ -596,12 +596,12 @@ def test_only_notify_module_uses_requests_post():
         )
 ```
 
-- [ ] **Step 2: Run test to verify it passes against current code**
+- [x] **Step 2: Run test to verify it passes against current code**
 
 Run: `uv run pytest tests/test_no_trading.py -v`
 Expected: PASS (3 passed) — confirms Task 4's client is already compliant.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add tests/test_no_trading.py
