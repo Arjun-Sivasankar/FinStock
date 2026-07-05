@@ -24,7 +24,7 @@
 - Create: `src/finstock/analysis/__init__.py`
 - Create: `README.md`
 
-- [ ] **Step 1: Create `pyproject.toml`**
+- [x] **Step 1: Create `pyproject.toml`**
 
 ```toml
 [project]
@@ -55,7 +55,7 @@ packages = ["src/finstock"]
 pythonpath = ["src"]
 ```
 
-- [ ] **Step 2: Create `.gitignore`**
+- [x] **Step 2: Create `.gitignore`**
 
 ```
 .venv/
@@ -66,7 +66,7 @@ __pycache__/
 .pytest_cache/
 ```
 
-- [ ] **Step 3: Create `.env.example`**
+- [x] **Step 3: Create `.env.example`**
 
 ```
 T212_API_KEY=
@@ -75,7 +75,7 @@ FMP_API_KEY=
 NTFY_TOPIC=
 ```
 
-- [ ] **Step 4: Create `config/config.yaml`**
+- [x] **Step 4: Create `config/config.yaml`**
 
 ```yaml
 t212_env: demo
@@ -103,11 +103,11 @@ notify:
   schedule_times: ["08:00", "18:00"]
 ```
 
-- [ ] **Step 5: Create empty package `__init__.py` files**
+- [x] **Step 5: Create empty package `__init__.py` files**
 
 Create `src/finstock/__init__.py`, `src/finstock/clients/__init__.py`, `src/finstock/analysis/__init__.py` — all empty.
 
-- [ ] **Step 6: Create a minimal `README.md`**
+- [x] **Step 6: Create a minimal `README.md`**
 
 ```markdown
 # FinStock
@@ -126,12 +126,12 @@ cancels orders — see `docs/superpowers/specs/2026-07-05-finstock-research-tool
 5. To schedule twice-daily runs: `powershell scripts/register_task_scheduler.ps1`
 ```
 
-- [ ] **Step 7: Run `uv sync` to create the virtualenv and lock file**
+- [x] **Step 7: Run `uv sync` to create the virtualenv and lock file**
 
 Run: `cd c:/MySPACE/FinanceStock && uv sync`
 Expected: creates `.venv/` and `uv.lock` with no errors.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add pyproject.toml .gitignore .env.example config/config.yaml src/finstock/__init__.py src/finstock/clients/__init__.py src/finstock/analysis/__init__.py README.md uv.lock
