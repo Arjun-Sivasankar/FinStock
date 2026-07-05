@@ -146,7 +146,7 @@ git commit -m "chore: scaffold finstock project with uv"
 - Create: `src/finstock/config.py`
 - Test: `tests/test_config.py`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```python
 # tests/test_config.py
@@ -197,12 +197,12 @@ def test_load_settings_reads_yaml_and_env(tmp_path, monkeypatch):
     assert settings.t212_base_url == "https://demo.trading212.com/api/v0"
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [x] **Step 2: Run test to verify it fails**
 
 Run: `uv run pytest tests/test_config.py -v`
 Expected: FAIL with `ModuleNotFoundError: No module named 'finstock.config'`
 
-- [ ] **Step 3: Write `src/finstock/config.py`**
+- [x] **Step 3: Write `src/finstock/config.py`**
 
 ```python
 from __future__ import annotations
@@ -281,12 +281,12 @@ def load_settings(
     )
 ```
 
-- [ ] **Step 4: Run test to verify it passes**
+- [x] **Step 4: Run test to verify it passes**
 
 Run: `uv run pytest tests/test_config.py -v`
 Expected: PASS
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/finstock/config.py tests/test_config.py
