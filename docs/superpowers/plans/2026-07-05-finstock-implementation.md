@@ -616,7 +616,7 @@ git commit -m "test: add AST-based guardrail against order-placement code"
 - Create: `src/finstock/clients/finnhub.py`
 - Test: `tests/clients/test_finnhub.py`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```python
 # tests/clients/test_finnhub.py
@@ -661,12 +661,12 @@ def test_insider_transactions_retries_on_500():
     assert result == {"data": []}
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [x] **Step 2: Run test to verify it fails**
 
 Run: `uv run pytest tests/clients/test_finnhub.py -v`
 Expected: FAIL with `ModuleNotFoundError: No module named 'finstock.clients.finnhub'`
 
-- [ ] **Step 3: Write `src/finstock/clients/finnhub.py`**
+- [x] **Step 3: Write `src/finstock/clients/finnhub.py`**
 
 ```python
 from __future__ import annotations
@@ -754,17 +754,17 @@ class FinnhubClient:
         return self._get("/stock/metric", {"symbol": symbol, "metric": "all"})
 ```
 
-- [ ] **Step 4: Run test to verify it passes**
+- [x] **Step 4: Run test to verify it passes**
 
 Run: `uv run pytest tests/clients/test_finnhub.py -v`
 Expected: PASS
 
-- [ ] **Step 5: Run the full no-trading guardrail suite again**
+- [x] **Step 5: Run the full no-trading guardrail suite again**
 
 Run: `uv run pytest tests/test_no_trading.py -v`
 Expected: PASS — `finnhub.py` only uses `requests.get`, so it stays compliant.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add src/finstock/clients/finnhub.py tests/clients/test_finnhub.py
@@ -779,7 +779,7 @@ git commit -m "feat: add Finnhub client with rate limiting and retry"
 - Create: `src/finstock/clients/fmp.py`
 - Test: `tests/clients/test_fmp.py`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```python
 # tests/clients/test_fmp.py
@@ -819,12 +819,12 @@ def test_not_entitled_response_raises_without_retry():
     assert client.calls_made == 0
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [x] **Step 2: Run test to verify it fails**
 
 Run: `uv run pytest tests/clients/test_fmp.py -v`
 Expected: FAIL with `ModuleNotFoundError: No module named 'finstock.clients.fmp'`
 
-- [ ] **Step 3: Write `src/finstock/clients/fmp.py`**
+- [x] **Step 3: Write `src/finstock/clients/fmp.py`**
 
 ```python
 from __future__ import annotations
@@ -880,12 +880,12 @@ class FMPClient:
         return self._get(f"/ratios/{symbol}", {"limit": 1})
 ```
 
-- [ ] **Step 4: Run test to verify it passes**
+- [x] **Step 4: Run test to verify it passes**
 
 Run: `uv run pytest tests/clients/test_fmp.py -v`
 Expected: PASS
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/finstock/clients/fmp.py tests/clients/test_fmp.py
@@ -900,7 +900,7 @@ git commit -m "feat: add FMP client with plan-degradation handling"
 - Create: `src/finstock/analysis/technicals.py`
 - Test: `tests/analysis/test_technicals.py`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```python
 # tests/analysis/test_technicals.py
@@ -925,12 +925,12 @@ def test_rsi_returns_none_when_insufficient_data():
     assert rsi([1.0, 2.0], period=14) is None
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [x] **Step 2: Run test to verify it fails**
 
 Run: `uv run pytest tests/analysis/test_technicals.py -v`
 Expected: FAIL with `ModuleNotFoundError: No module named 'finstock.analysis.technicals'`
 
-- [ ] **Step 3: Write `src/finstock/analysis/technicals.py`**
+- [x] **Step 3: Write `src/finstock/analysis/technicals.py`**
 
 ```python
 from __future__ import annotations
@@ -961,12 +961,12 @@ def rsi(prices: list[float], period: int = 14) -> float | None:
     return 100 - (100 / (1 + rs))
 ```
 
-- [ ] **Step 4: Run test to verify it passes**
+- [x] **Step 4: Run test to verify it passes**
 
 Run: `uv run pytest tests/analysis/test_technicals.py -v`
 Expected: PASS
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/finstock/analysis/technicals.py tests/analysis/test_technicals.py
