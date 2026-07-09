@@ -2402,11 +2402,11 @@ This task is **not automated** — it's a checklist for you to run once, using y
 
 *Deviation from spec:* the spec's Testing section describes "thin integration tests per API client, skipped unless real keys are present in the environment" (i.e. `pytest.mark.skipif`-based tests). This plan substitutes a manual checklist instead, since a personal single-user tool doesn't need that automation to stay maintainable, and the mocked tests in Tasks 4/6/7 already cover each client's request-building and retry logic. If you'd rather have real `skipif`-gated integration tests, that can be added as a follow-up task.
 
-- [x] **Step 1:** Copy `.env.example` to `.env` and fill in your real `T212_API_KEY`, `FINNHUB_API_KEY`, `FMP_API_KEY`, and `NTFY_TOPIC` (subscribe to that topic in the ntfy iOS app first).
-- [x] **Step 2:** Set `t212_env: demo` in `config/config.yaml` for the first run (switch to `live` only once you're satisfied with the output).
-- [x] **Step 3:** Run `uv run python -m finstock.main`.
-- [x] **Step 4:** Confirm a new file appears under `data/reports/` and open it — check the portfolio section reflects your real cash/holdings, and the disclaimer/uncertainty notes are present throughout.
-- [x] **Step 5:** Confirm a notification arrived on your phone via ntfy.
-- [x] **Step 6:** Re-run the tool a second time and confirm the report now includes a "Changes since last report" section (even if empty) instead of "First run."
-- [x] **Step 7:** If satisfied, switch `t212_env` to `live` with your live read-only key, and run `powershell scripts/register_task_scheduler.ps1` to register the twice-daily schedule.
-- [x] **Step 8:** Run `uv run pytest -v` one final time to confirm the full suite (including the no-trading guardrail) is green before relying on the scheduled runs.
+- [ ] **Step 1:** Copy `.env.example` to `.env` and fill in your real `T212_API_KEY`, `FINNHUB_API_KEY`, `FMP_API_KEY`, and `NTFY_TOPIC` (subscribe to that topic in the ntfy iOS app first).
+- [ ] **Step 2:** Set `t212_env: demo` in `config/config.yaml` for the first run (switch to `live` only once you're satisfied with the output).
+- [ ] **Step 3:** Run `uv run python -m finstock.main`.
+- [ ] **Step 4:** Confirm a new file appears under `data/reports/` and open it — check the portfolio section reflects your real cash/holdings, and the disclaimer/uncertainty notes are present throughout.
+- [ ] **Step 5:** Confirm a notification arrived on your phone via ntfy.
+- [ ] **Step 6:** Re-run the tool a second time and confirm the report now includes a "Changes since last report" section (even if empty) instead of "First run."
+- [ ] **Step 7:** If satisfied, switch `t212_env` to `live` with your live read-only key, and run `powershell scripts/register_task_scheduler.ps1` to register the twice-daily schedule.
+- [ ] **Step 8:** Run `uv run pytest -v` one final time to confirm the full suite (including the no-trading guardrail) is green before relying on the scheduled runs.
